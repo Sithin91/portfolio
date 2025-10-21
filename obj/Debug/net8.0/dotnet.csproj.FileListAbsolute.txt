@@ -28,3 +28,4 @@ C:\Users\Sithin.A\Documents\PersonalGit\dotnet\obj\Debug\net8.0\refint\dotnet.dl
 C:\Users\Sithin.A\Documents\PersonalGit\dotnet\obj\Debug\net8.0\dotnet.pdb
 C:\Users\Sithin.A\Documents\PersonalGit\dotnet\obj\Debug\net8.0\dotnet.genruntimeconfig.cache
 C:\Users\Sithin.A\Documents\PersonalGit\dotnet\obj\Debug\net8.0\ref\dotnet.dll
+C:\Users\Sithin.A\Documents\PersonalGit\dotnet\obj\Debug\net8.0\dotnet.sourcelink.json

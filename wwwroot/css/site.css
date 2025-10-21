@@ -81,6 +81,17 @@ body {
   animation: fadeInUp 1s ease-out;
 }
 
+/* Typing Animation */
+#typing-name {
+  border-right: 3px solid white;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { border-color: white; }
+  51%, 100% { border-color: transparent; }
+}
+
 .navbar {
   background-color: rgba(15, 23, 42, 0.9) !important;
   backdrop-filter: blur(10px);

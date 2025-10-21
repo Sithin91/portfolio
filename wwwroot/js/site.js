@@ -5,6 +5,27 @@
 
 // Scroll animation for sections
 document.addEventListener('DOMContentLoaded', function() {
+    // Typing animation for name
+    const typingElement = document.getElementById('typing-name');
+    const nameText = 'Sithin Adiyeri';
+    let index = 0;
+
+    function typeWriter() {
+        if (index < nameText.length) {
+            typingElement.textContent += nameText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 150); // Adjust speed here
+        } else {
+            // Stop blinking cursor after typing is complete
+            setTimeout(() => {
+                typingElement.style.borderRight = 'none';
+            }, 500);
+        }
+    }
+
+    // Start typing animation after a short delay
+    setTimeout(typeWriter, 1000);
+
     const sections = document.querySelectorAll('section');
 
     const observerOptions = {
