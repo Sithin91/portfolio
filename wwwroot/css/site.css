@@ -105,6 +105,7 @@ body {
 
 .nav-link {
   font-weight: 500;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
@@ -301,6 +302,7 @@ html {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px var(--shadow-primary);
     background: var(--gradient-primary);
+    color: white;
 }
 
 .btn-modern:focus {
@@ -433,11 +435,14 @@ html {
 /* Modern Projects Section */
 .project-card-modern {
     background: white;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     height: 100%;
+    transform: translateZ(0);
+    max-width: 280px;
+    margin: 0 auto;
 }
 
 .project-card-modern:hover {
@@ -463,8 +468,16 @@ html {
     object-fit: cover;
 }
 
-.project-card-modern:hover .project-vector-graphic {
-    transform: scale(1.05);
+.project-image-tag {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.project-image {
+    position: relative;
+    background: #c7efdf;
 }
 
 .project-overlay {
@@ -510,20 +523,21 @@ html {
 }
 
 .project-content {
-    padding: 25px;
+    padding: 18px;
 }
 
 .project-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .project-description {
     color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
 }
 
 .project-tech {
@@ -660,6 +674,7 @@ html {
     border-radius: 25px;
     padding: 15px 30px;
     font-weight: 600;
+    color: white;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--shadow-primary);
 }
@@ -668,6 +683,7 @@ html {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px var(--shadow-primary);
     background: var(--gradient-primary);
+    color: white;
 }
 
 .contact-bg-shape {
@@ -766,14 +782,56 @@ html {
     }
 }
 
-/* Increased header sizes */
-h2.display-4 {
-    font-size: 4rem;
-    line-height: 1.1;
+/* Horizontal scrolling for courses/projects */
+.courses-row {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+    padding-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    h2.display-4 {
-        font-size: 2.5rem;
-    }
+.courses-row::-webkit-scrollbar {
+    height: 6px;
+}
+
+.courses-row::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.courses-row::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.courses-row::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Navbar link styling for proper contrast */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255);
+}
+
+/* Back to Top Button Styling */
+#backToTop {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-primary);
+    background: var(--gradient-primary);
 }

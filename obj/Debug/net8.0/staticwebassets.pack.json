@@ -13,24 +13,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\favicon.svg",
+      "PackagePath": "staticwebassets\\favicon.svg"
+    },
+    {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\Cloud-computing.png",
+      "PackagePath": "staticwebassets\\images\\Cloud-computing.png"
+    },
+    {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\Cyber-Security.jpg",
+      "PackagePath": "staticwebassets\\images\\Cyber-Security.jpg"
+    },
+    {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\README.md",
       "PackagePath": "staticwebassets\\images\\README.md"
     },
     {
-      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\analytics-dashboard.jpg",
-      "PackagePath": "staticwebassets\\images\\analytics-dashboard.jpg"
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\ci-cd-pipeline-projects.png",
+      "PackagePath": "staticwebassets\\images\\ci-cd-pipeline-projects.png"
     },
     {
-      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\ecommerce-platform.jpg",
-      "PackagePath": "staticwebassets\\images\\ecommerce-platform.jpg"
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\linux-administration.png",
+      "PackagePath": "staticwebassets\\images\\linux-administration.png"
     },
     {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\profile.png",
       "PackagePath": "staticwebassets\\images\\profile.png"
-    },
-    {
-      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\task-management.jpg",
-      "PackagePath": "staticwebassets\\images\\task-management.jpg"
     },
     {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\js\\site.js",
@@ -263,6 +271,10 @@
     {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\site.webmanifest",
+      "PackagePath": "staticwebassets\\site.webmanifest"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.dotnet.props",
