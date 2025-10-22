@@ -25,12 +25,24 @@
       "PackagePath": "staticwebassets\\images\\Cyber-Security.jpg"
     },
     {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\PowerShell.png",
+      "PackagePath": "staticwebassets\\images\\PowerShell.png"
+    },
+    {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\README.md",
       "PackagePath": "staticwebassets\\images\\README.md"
     },
     {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\azure-cloud.webp",
+      "PackagePath": "staticwebassets\\images\\azure-cloud.webp"
+    },
+    {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\ci-cd-pipeline-projects.png",
       "PackagePath": "staticwebassets\\images\\ci-cd-pipeline-projects.png"
+    },
+    {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\kubernetes.webp",
+      "PackagePath": "staticwebassets\\images\\kubernetes.webp"
     },
     {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\linux-administration.png",
@@ -39,6 +51,10 @@
     {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\profile.png",
       "PackagePath": "staticwebassets\\images\\profile.png"
+    },
+    {
+      "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\windows-server.jpg",
+      "PackagePath": "staticwebassets\\images\\windows-server.jpg"
     },
     {
       "Id": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\js\\site.js",

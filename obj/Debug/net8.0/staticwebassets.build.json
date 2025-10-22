@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+BMAAX+ZT1W5uMpGTn1XAZfR4ca1sIMm7k5yAz5UcXA=",
+  "Hash": "D80CbLECtR/qsqvWEtwd83qWuK1UPM0rCjKB7xZTQbc=",
   "Source": "dotnet",
   "BasePath": "_content/dotnet",
   "Mode": "Default",
@@ -112,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\favicon.svg"
     },
     {
+      "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\azure-cloud.webp",
+      "SourceId": "dotnet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\",
+      "BasePath": "_content/dotnet",
+      "RelativePath": "images/azure-cloud.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\azure-cloud.webp"
+    },
+    {
       "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\ci-cd-pipeline-projects.png",
       "SourceId": "dotnet",
       "SourceType": "Discovered",
@@ -169,6 +188,25 @@
       "OriginalItemSpec": "wwwroot\\images\\Cyber-Security.jpg"
     },
     {
+      "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\kubernetes.webp",
+      "SourceId": "dotnet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\",
+      "BasePath": "_content/dotnet",
+      "RelativePath": "images/kubernetes.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\kubernetes.webp"
+    },
+    {
       "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\linux-administration.png",
       "SourceId": "dotnet",
       "SourceType": "Discovered",
@@ -186,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\linux-administration.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\PowerShell.png",
+      "SourceId": "dotnet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\",
+      "BasePath": "_content/dotnet",
+      "RelativePath": "images/PowerShell.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\PowerShell.png"
     },
     {
       "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\profile.png",
@@ -224,6 +281,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\README.md"
+    },
+    {
+      "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\images\\windows-server.jpg",
+      "SourceId": "dotnet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\",
+      "BasePath": "_content/dotnet",
+      "RelativePath": "images/windows-server.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\windows-server.jpg"
     },
     {
       "Identity": "C:\\Users\\Sithin.A\\Documents\\PersonalGit\\dotnet\\wwwroot\\js\\site.js",
