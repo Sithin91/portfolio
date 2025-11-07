@@ -28,7 +28,7 @@ A modern, responsive single-page DevOps Engineer portfolio website built with AS
 3. Navigate to the project directory
 4. Run `dotnet build` to build the project
 5. Run `dotnet run` to start the development server
-6. Open your browser and navigate to `https://localhost:5001` (or the URL shown in the console)
+6. Open your browser and navigate to `https://localhost:5124` (or the URL shown in the console)
 
 ## Customization
 
