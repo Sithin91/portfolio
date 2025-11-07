@@ -44,14 +44,14 @@ body {
 }
 
 .hero-section {
-  min-height: 100vh;
+  height: 100vh;
   background: var(--gradient-primary);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 .hero-section::before {
@@ -96,6 +96,8 @@ body {
   background-color: rgba(15, 23, 42, 0.9) !important;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .navbar-brand {
@@ -107,6 +109,8 @@ body {
   font-weight: 500;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 .nav-link:hover {
@@ -114,14 +118,25 @@ body {
 }
 
 section {
-  padding-top: 80px;
-  margin-top: -80px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+    padding-top: 80px;
+    margin-top: -80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-section.visible {
+#hero {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about {
+    margin-top: 0;
+    padding-top: 80px;
+}section.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -233,6 +248,7 @@ section.visible {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 /* Responsive improvements */
@@ -821,6 +837,16 @@ html {
     .carousel-control-next.testimonial-nav-btn {
         right: 5px;
     }
+    
+    /* Show only one testimonial card per slide on mobile */
+    .carousel-item .row .col-lg-4:not(:first-child) {
+        display: none;
+    }
+    
+    .carousel-item .row .col-lg-4:first-child {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 /* Modern Contact Section */
@@ -895,6 +921,7 @@ html {
 
 .social-link-modern:hover {
     background: var(--primary-color);
+    color: #fff;
     transform: translateY(-3px);
 }
 
@@ -1027,18 +1054,59 @@ html {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
     }
 
     .skill-circle {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     .skill-inner {
-        width: 80px;
-        height: 80px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .skill-icon {
+        font-size: 1.5rem;
+        margin-bottom: 3px;
+        color: #00d084;
+    }
+
+    .skill-percent {
+        font-size: 0.8rem;
+    }
+
+    .skill-name {
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
+
+    /* Attractive green progress color for mobile */
+    .skill-circle {
+        background: conic-gradient(#00d084 0% 0%, #e9ecef 0% 100%);
+    }
+
+    /* Add gap between skills and testimonials sections on mobile */
+    #skills {
+        margin-bottom: 40px;
+    }
+
+    /* Show stat cards side by side on mobile */
+    .stat-card {
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .stat-card h3 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+    }
+
+    .stat-card p {
+        font-size: 0.95rem;
+        font-weight: 500;
     }
 
     .contact-form-container {
@@ -1047,6 +1115,11 @@ html {
 
     .social-links-modern {
         justify-content: center;
+    }
+
+    /* Center "View My Work" button on mobile */
+    .about-content {
+        text-align: center;
     }
 }
 
@@ -1102,4 +1175,24 @@ html {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px var(--shadow-primary);
     background: var(--gradient-primary);
+}
+
+/* Hero Section Mouse Interaction Effects */
+.hero-section .container {
+    transition: transform 0.3s ease;
+}
+
+.floating-particle {
+    transition: all 0.8s ease;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+        opacity: 1;
+    }
 }

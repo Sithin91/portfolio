@@ -55,6 +55,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth',
                     block: 'start'
                 });
+                
+                // Auto-hide navbar on mobile after clicking a nav link
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                
+                if (navbarCollapse && navbarToggler) {
+                    // Check if navbar is expanded (mobile view)
+                    if (navbarCollapse.classList.contains('show')) {
+                        // Use Bootstrap's collapse method to hide the navbar
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    }
+                }
             }
         });
     });
@@ -207,6 +222,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const duration = 2000; // 2 seconds
         const increment = targetPercent / (duration / 50);
         
+        // Check if mobile view
+        const isMobile = window.innerWidth <= 768;
+        const progressColor = isMobile ? '#00d084' : 'var(--primary-color)';
+        
         const timer = setInterval(() => {
             currentPercent += increment;
             if (currentPercent >= targetPercent) {
@@ -214,8 +233,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearInterval(timer);
             }
             
-            // Update the conic gradient
-            circle.style.background = `conic-gradient(var(--primary-color) 0% ${currentPercent}%, #e9ecef ${currentPercent}% 100%)`;
+            // Update the conic gradient with appropriate color
+            circle.style.background = `conic-gradient(${progressColor} 0% ${currentPercent}%, #e9ecef ${currentPercent}% 100%)`;
             
             // Update the percentage text
             percentText.textContent = Math.round(currentPercent) + '%';
@@ -241,4 +260,84 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
+
+    // Hero Section Mouse Interaction Effect
+    const heroSection = document.querySelector('.hero-section');
+    const heroContent = document.querySelector('.hero-section .container');
+    
+    if (heroSection && heroContent) {
+        heroSection.addEventListener('mousemove', function(e) {
+            const rect = heroSection.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            
+            // Apply subtle parallax effect to hero content
+            const moveX = deltaX * 10;
+            const moveY = deltaY * 10;
+            
+            heroContent.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+        
+        // Reset position when mouse leaves
+        heroSection.addEventListener('mouseleave', function() {
+            heroContent.style.transform = 'translate(0px, 0px)';
+        });
+        
+        // Add floating particles effect
+        createFloatingParticles();
+    }
+    
+    function createFloatingParticles() {
+        const particles = [];
+        const particleCount = 20;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'floating-particle';
+            particle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.6);
+                border-radius: 50%;
+                pointer-events: none;
+                opacity: 0;
+                animation: float ${3 + Math.random() * 2}s ease-in-out infinite;
+                animation-delay: ${Math.random() * 2}s;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+            `;
+            
+            heroSection.appendChild(particle);
+            particles.push(particle);
+        }
+        
+        // Animate particles on mouse move
+        heroSection.addEventListener('mousemove', function(e) {
+            const rect = heroSection.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            
+            particles.forEach((particle, index) => {
+                const delay = index * 50;
+                setTimeout(() => {
+                    particle.style.opacity = '1';
+                    particle.style.transform = `translate(${(x - 50) * 0.1}px, ${(y - 50) * 0.1}px)`;
+                }, delay);
+            });
+        });
+        
+        heroSection.addEventListener('mouseleave', function() {
+            particles.forEach(particle => {
+                particle.style.opacity = '0';
+                particle.style.transform = 'translate(0px, 0px)';
+            });
+        });
+    }
 });
