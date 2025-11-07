@@ -15,6 +15,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
@@ -154,7 +155,276 @@
     </div>
 </section>
 
-<!-- Training Section -->
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 testimonials-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold text-dark mb-3">What My Students Say</h2>
+            <p class="lead text-muted">Hear from students who have benefited from my training courses</p>
+        </div>
+        
+        <!-- Testimonials Carousel -->
+        <div id="testimonialsCarousel" class="carousel slide testimonials-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <!-- First Slide - 3 Testimonials -->
+                <div class="carousel-item active">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card-modern">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Sithin's CI/CD Pipeline Automation course was incredibly insightful. The hands-on labs and real-world examples helped me implement automated deployments. His expertise in Jenkins and Azure DevOps is unmatched!"</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="avatarGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="25" cy="25" r="25" fill="url(#avatarGradient1)"/>
+                                            <circle cx="25" cy="18" r="8" fill="white" opacity="0.9"/>
+                                            <path d="M10 40 Q25 30 40 40 L40 45 Q25 35 10 45 Z" fill="white" opacity="0.9"/>
+                                            <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">RS</text>
+                                        </svg>
+                                    </div>
+                                    <div class="author-info">
+                                        <h5 class="author-name">Rahul Sharma</h5>
+                                        <p class="author-role">Software Engineer at TCS</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card-modern">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The Kubernetes Cluster Management course transformed my understanding of container orchestration. Sithin's practical approach with Helm charts and monitoring tools was exactly what I needed."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="avatarGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="25" cy="25" r="25" fill="url(#avatarGradient2)"/>
+                                            <circle cx="25" cy="18" r="8" fill="white" opacity="0.9"/>
+                                            <path d="M10 40 Q25 30 40 40 L40 45 Q25 35 10 45 Z" fill="white" opacity="0.9"/>
+                                            <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PP</text>
+                                        </svg>
+                                    </div>
+                                    <div class="author-info">
+                                        <h5 class="author-name">Priya Patel</h5>
+                                        <p class="author-role">DevOps Engineer at Infosys</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card-modern">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Sithin's Azure Cloud Fundamentals course was comprehensive and well-structured. From virtual machines to networking, I gained practical skills that I apply daily. The Terraform labs were invaluable!"</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="avatarGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="25" cy="25" r="25" fill="url(#avatarGradient3)"/>
+                                            <circle cx="25" cy="18" r="8" fill="white" opacity="0.9"/>
+                                            <path d="M10 40 Q25 30 40 40 L40 45 Q25 35 10 45 Z" fill="white" opacity="0.9"/>
+                                            <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">AK</text>
+                                        </svg>
+                                    </div>
+                                    <div class="author-info">
+                                        <h5 class="author-name">Arjun Kumar</h5>
+                                        <p class="author-role">Cloud Architect at Wipro</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second Slide - 2 Testimonials -->
+                <div class="carousel-item">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card-modern">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"The PowerShell Automation course by Sithin was a game-changer for my career. I learned to automate complex administrative tasks efficiently. His real-world scenarios and scripting best practices are invaluable!"</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="avatarGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="25" cy="25" r="25" fill="url(#avatarGradient4)"/>
+                                            <circle cx="25" cy="18" r="8" fill="white" opacity="0.9"/>
+                                            <path d="M10 40 Q25 30 40 40 L40 45 Q25 35 10 45 Z" fill="white" opacity="0.9"/>
+                                            <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SV</text>
+                                        </svg>
+                                    </div>
+                                    <div class="author-info">
+                                        <h5 class="author-name">Sneha Verma</h5>
+                                        <p class="author-role">System Administrator at HCL</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card-modern">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Sithin's Linux System Administration course covered everything from package management to security hardening. The hands-on labs with real servers were perfect for practical learning!"</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="avatarGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="25" cy="25" r="25" fill="url(#avatarGradient5)"/>
+                                            <circle cx="25" cy="18" r="8" fill="white" opacity="0.9"/>
+                                            <path d="M10 40 Q25 30 40 40 L40 45 Q25 35 10 45 Z" fill="white" opacity="0.9"/>
+                                            <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">RG</text>
+                                        </svg>
+                                    </div>
+                                    <div class="author-info">
+                                        <h5 class="author-name">Ravi Gupta</h5>
+                                        <p class="author-role">Linux Administrator at Tech Mahindra</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card-modern">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p class="testimonial-text">"Sithin's Cybersecurity Fundamentals course provided excellent insights into threat analysis and risk assessment. The practical approach to encryption and access controls helped me secure our infrastructure effectively."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="avatarGradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="25" cy="25" r="25" fill="url(#avatarGradient6)"/>
+                                            <circle cx="25" cy="18" r="8" fill="white" opacity="0.9"/>
+                                            <path d="M10 40 Q25 30 40 40 L40 45 Q25 35 10 45 Z" fill="white" opacity="0.9"/>
+                                            <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">AM</text>
+                                        </svg>
+                                    </div>
+                                    <div class="author-info">
+                                        <h5 class="author-name">Anita Menon</h5>
+                                        <p class="author-role">Security Analyst at Cognizant</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Navigation Controls -->
+            <button class="carousel-control-prev testimonial-nav-btn" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                <i class="fas fa-chevron-left"></i>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next testimonial-nav-btn" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                <i class="fas fa-chevron-right"></i>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
 <section id="projects" class="py-5 mt-5">
     <div class="container">
         <div class="text-center mb-5">
