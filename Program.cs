@@ -24,6 +24,13 @@ app.MapRazorPages();
 
 // Bind to port specified in environment or default
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+var httpsPort = Environment.GetEnvironmentVariable("HTTPS_PORT");
+
+if (!string.IsNullOrEmpty(httpsPort))
+{
+    app.Urls.Add($"https://0.0.0.0:{httpsPort}");
+}
+
 app.Urls.Add($"http://0.0.0.0:{port}");
 
 app.Run();
