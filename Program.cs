@@ -22,8 +22,4 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-// Bind to port specified in environment (set by Azure) or use default
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-app.Urls.Add($"http://0.0.0.0:{port}");
-
 app.Run();
