@@ -8,10 +8,18 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#hero">Sithin Adiyeri</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="d-flex align-items-center">
+            <button id="themeToggle" class="btn btn-link nav-link theme-toggle-btn me-2" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="hamburger d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        <!-- Desktop Navigation -->
+        <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -23,6 +31,39 @@
         </div>
     </div>
 </nav>
+
+<!-- Mobile Sidebar -->
+<div class="offcanvas offcanvas-end mobile-sidebar" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link sidebar-link" href="#about" data-bs-dismiss="offcanvas"><i class="fas fa-user me-2"></i>About</a></li>
+            <li class="nav-item"><a class="nav-link sidebar-link" href="#skills" data-bs-dismiss="offcanvas"><i class="fas fa-code me-2"></i>Skills</a></li>
+            <li class="nav-item"><a class="nav-link sidebar-link" href="#projects" data-bs-dismiss="offcanvas"><i class="fas fa-book me-2"></i>Courses</a></li>
+            <li class="nav-item"><a class="nav-link sidebar-link" href="#testimonials" data-bs-dismiss="offcanvas"><i class="fas fa-comment-dots me-2"></i>Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link sidebar-link" href="#contact" data-bs-dismiss="offcanvas"><i class="fas fa-envelope me-2"></i>Contact</a></li>
+            <li class="nav-item"><a class="nav-link sidebar-link" href="https://medium.com/@@sithin91" target="_blank" rel="noopener noreferrer"><i class="fab fa-medium me-2"></i>Blog</a></li>
+        </ul>
+        <hr class="my-4">
+        <div class="sidebar-social">
+            <h6 class="text-muted mb-3">Connect With Me</h6>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/Sithin91" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://in.linkedin.com/in/sithin91" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://medium.com/@@sithin91" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                    <i class="fab fa-medium"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Hero Section -->
 <section id="hero" class="hero-section d-flex align-items-center">
@@ -70,7 +111,7 @@
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="py-5 bg-gradient mt-5">
+<section id="skills" class="py-5 bg-gradient">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="display-4 fw-bold text-dark mb-3">My Tech Skills</h2>
@@ -157,7 +198,7 @@
 </section>
 
 <!-- Courses Section -->
-<section id="projects" class="py-5 mt-5">
+<section id="projects" class="py-5">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="display-4 fw-bold text-dark mb-3">My Courses</h2>
@@ -343,8 +384,6 @@
         </div>
     </div>
 </section>
-
-<div style="height: 60px;"></div>
 
 <!-- Testimonials Section -->
 <section id="testimonials" class="py-5 testimonials-section">
@@ -616,7 +655,7 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-5 bg-dark text-white mt-5 position-relative overflow-hidden">
+<section id="contact" class="py-5 bg-dark text-white position-relative overflow-hidden">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="display-4 fw-bold mb-3">Let's Work Together</h2>
@@ -668,22 +707,22 @@
                     <form class="contact-form">
                         <div class="mb-3">
                             <label for="contactName" class="form-label">Name</label>
-                            <input type="text" class="form-control-modern" id="contactName" name="name" required>
+                            <input type="text" class="form-control-modern" id="contactName" name="name" aria-required="true" required>
                         </div>
                         <div class="mb-3">
                             <label for="contactEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control-modern" id="contactEmail" name="email" required>
+                            <input type="email" class="form-control-modern" id="contactEmail" name="email" aria-required="true" required>
                         </div>
                         <div class="mb-3">
                             <label for="contactSubject" class="form-label">Subject</label>
-                            <input type="text" class="form-control-modern" id="contactSubject" name="subject" required>
+                            <input type="text" class="form-control-modern" id="contactSubject" name="subject" aria-required="true" required>
                         </div>
                         <div class="mb-4">
                             <label for="contactMessage" class="form-label">Message</label>
-                            <textarea class="form-control-modern" id="contactMessage" name="message" rows="5" required></textarea>
+                            <textarea class="form-control-modern" id="contactMessage" name="message" rows="5" aria-required="true" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-modern-primary btn-lg w-100">
-                            Send Message <i class="fas fa-paper-plane ms-2"></i>
+                            Send Message <i class="fas fa-paper-plane ms-2" aria-hidden="true"></i>
                         </button>
                     </form>
                 </div>
@@ -701,6 +740,6 @@
 </footer>
 
 <!-- Back to Top Button -->
-<button id="backToTop" class="position-fixed" style="bottom: 20px; right: 20px; display: none; z-index: 1000;">
+<button id="backToTop" class="position-fixed" style="bottom: 20px; right: 20px; display: none; z-index: 1000;" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
 </button>

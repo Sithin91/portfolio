@@ -3,8 +3,87 @@
 
 // Write your JavaScript code.
 
-// Scroll animation for sections
+// ============================================
+// THEME TOGGLE FUNCTIONALITY
+// ============================================
+function initializeThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    const THEME_KEY = 'portfolio-theme-preference';
+    
+    // Load saved theme or use system preference on first visit
+    function loadTheme() {
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        
+        if (savedTheme) {
+            // Use saved preference
+            applyTheme(savedTheme);
+        } else {
+            // Check system preference on first visit
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(prefersDark ? 'dark' : 'light');
+        }
+    }
+    
+    // Apply theme and update UI
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-mode');
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            updateToggleIcon('sun');
+        } else {
+            document.body.classList.remove('dark-mode');
+            htmlElement.setAttribute('data-bs-theme', 'light');
+            updateToggleIcon('moon');
+        }
+        localStorage.setItem(THEME_KEY, theme);
+    }
+    
+    // Update toggle button icon
+    function updateToggleIcon(icon) {
+        if (themeToggle) {
+            themeToggle.innerHTML = `<i class="fas fa-${icon}"></i>`;
+        }
+    }
+    
+    // Toggle between light and dark
+    function toggleTheme() {
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        applyTheme(isDarkMode ? 'light' : 'dark');
+    }
+    
+    // Event listener for toggle button
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Load theme on page load
+    loadTheme();
+}
+
+// ============================================
+// SCROLL ANIMATION FOR SECTIONS
+// ============================================
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme toggle
+    initializeThemeToggle();
+    
+    // Hamburger menu animation
+    const hamburger = document.querySelector('.hamburger');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    
+    if (hamburger && mobileSidebar) {
+        // Toggle hamburger icon when offcanvas opens/closes
+        mobileSidebar.addEventListener('show.bs.offcanvas', function () {
+            hamburger.classList.add('active');
+        });
+        
+        mobileSidebar.addEventListener('hide.bs.offcanvas', function () {
+            hamburger.classList.remove('active');
+        });
+    }
+    
     // Typing animation for name
     const typingElement = document.getElementById('typing-name');
     const nameText = 'Sithin Adiyeri';
@@ -48,45 +127,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || !href) return;
+            
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
                 
-                // Auto-hide navbar on mobile after clicking a nav link
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                const navbarToggler = document.querySelector('.navbar-toggler');
-                
-                if (navbarCollapse && navbarToggler) {
-                    // Check if navbar is expanded (mobile view)
-                    if (navbarCollapse.classList.contains('show')) {
-                        // Use Bootstrap's collapse method to hide the navbar
-                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                            toggle: false
-                        });
-                        bsCollapse.hide();
+                // Auto-close offcanvas sidebar on mobile after clicking
+                const offcanvasElement = document.getElementById('mobileSidebar');
+                if (offcanvasElement) {
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+                    if (bsOffcanvas) {
+                        bsOffcanvas.hide();
                     }
                 }
             }
         });
     });
 
-    // Real-time form validation
-    const formInputs = document.querySelectorAll('.form-control-modern');
-    formInputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            validateField(this);
-        });
-
-        input.addEventListener('input', function() {
-            if (this.classList.contains('is-invalid')) {
-                validateField(this);
+    // Real-time form validation using event delegation
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('blur', function(e) {
+            if (e.target.classList.contains('form-control-modern')) {
+                validateField(e.target);
             }
-        });
-    });
+        }, true);
+
+        contactForm.addEventListener('input', function(e) {
+            if (e.target.classList.contains('form-control-modern') && e.target.classList.contains('is-invalid')) {
+                validateField(e.target);
+            }
+        }, true);
+    }
 
     function validateField(field) {
         const value = field.value.trim();
@@ -218,40 +296,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function animateSkillCircle(circle, targetPercent, percentText) {
-        let currentPercent = 0;
         const duration = 2000; // 2 seconds
-        const increment = targetPercent / (duration / 50);
+        const startTime = performance.now();
         
-        // Check if mobile view
-        const isMobile = window.innerWidth <= 768;
-        const progressColor = isMobile ? '#00d084' : 'var(--primary-color)';
-        
-        const timer = setInterval(() => {
-            currentPercent += increment;
-            if (currentPercent >= targetPercent) {
-                currentPercent = targetPercent;
-                clearInterval(timer);
-            }
+        function animate(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const currentPercent = progress * targetPercent;
             
-            // Update the conic gradient with appropriate color
-            circle.style.background = `conic-gradient(${progressColor} 0% ${currentPercent}%, #e9ecef ${currentPercent}% 100%)`;
+            // Update the conic gradient with gradient color
+            circle.style.background = `conic-gradient(from 0deg, #2563eb 0%, #7c3aed ${currentPercent}%, #e9ecef ${currentPercent}% 100%)`;
             
             // Update the percentage text
             percentText.textContent = Math.round(currentPercent) + '%';
-        }, 50);
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            }
+        }
+        
+        requestAnimationFrame(animate);
     }
 
     // Back to Top Button functionality
     const backToTopButton = document.getElementById('backToTop');
+    let scrollTimeout;
     
-    // Show/hide button based on scroll position
+    // Show/hide button based on scroll position (debounced)
     window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) { // Show after scrolling 300px
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
+        if (scrollTimeout) {
+            return;
         }
-    });
+        scrollTimeout = setTimeout(function() {
+            if (window.pageYOffset > 300) { // Show after scrolling 300px
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+            scrollTimeout = null;
+        }, 100);
+    }, { passive: true });
     
     // Scroll to top when button is clicked
     backToTopButton.addEventListener('click', function() {
@@ -266,22 +350,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroContent = document.querySelector('.hero-section .container');
     
     if (heroSection && heroContent) {
+        let ticking = false;
+        let lastMouseEvent = null;
+        
         heroSection.addEventListener('mousemove', function(e) {
-            const rect = heroSection.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            lastMouseEvent = e;
             
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const deltaX = (x - centerX) / centerX;
-            const deltaY = (y - centerY) / centerY;
-            
-            // Apply subtle parallax effect to hero content
-            const moveX = deltaX * 10;
-            const moveY = deltaY * 10;
-            
-            heroContent.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    const rect = heroSection.getBoundingClientRect();
+                    const x = lastMouseEvent.clientX - rect.left;
+                    const y = lastMouseEvent.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const deltaX = (x - centerX) / centerX;
+                    const deltaY = (y - centerY) / centerY;
+                    
+                    // Apply subtle parallax effect to hero content
+                    const moveX = deltaX * 10;
+                    const moveY = deltaY * 10;
+                    
+                    heroContent.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
         
         // Reset position when mouse leaves
@@ -318,19 +413,27 @@ document.addEventListener('DOMContentLoaded', function() {
             particles.push(particle);
         }
         
-        // Animate particles on mouse move
+        // Animate particles on mouse move (throttled)
+        let particleTicking = false;
+        let lastParticleEvent = null;
+        
         heroSection.addEventListener('mousemove', function(e) {
-            const rect = heroSection.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            lastParticleEvent = e;
             
-            particles.forEach((particle, index) => {
-                const delay = index * 50;
-                setTimeout(() => {
-                    particle.style.opacity = '1';
-                    particle.style.transform = `translate(${(x - 50) * 0.1}px, ${(y - 50) * 0.1}px)`;
-                }, delay);
-            });
+            if (!particleTicking) {
+                requestAnimationFrame(function() {
+                    const rect = heroSection.getBoundingClientRect();
+                    const x = ((lastParticleEvent.clientX - rect.left) / rect.width) * 100;
+                    const y = ((lastParticleEvent.clientY - rect.top) / rect.height) * 100;
+                    
+                    particles.forEach((particle) => {
+                        particle.style.opacity = '1';
+                        particle.style.transform = `translate(${(x - 50) * 0.1}px, ${(y - 50) * 0.1}px)`;
+                    });
+                    particleTicking = false;
+                });
+                particleTicking = true;
+            }
         });
         
         heroSection.addEventListener('mouseleave', function() {
