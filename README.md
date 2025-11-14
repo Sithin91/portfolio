@@ -1,4 +1,4 @@
-# DevOps Engineer Portfolio
+# Senior Engineer & Tech Trainer Portfolio
 
 A modern, responsive single-page DevOps Engineer portfolio website built with ASP.NET Core and Bootstrap, showcasing expertise in CI/CD pipelines, cloud infrastructure, containerization, and automation.
 
