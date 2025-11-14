@@ -23,20 +23,53 @@ A modern, responsive single-page DevOps Engineer portfolio website built with AS
 
 ## Getting Started
 
-1. Ensure you have .NET 8.0 SDK installed
-2. Clone or download the project
-3. Navigate to the project directory
-4. Run `dotnet build` to build the project
-5. Run `dotnet run` to start the development server
-6. Open your browser and navigate to `https://localhost:5124` (or the URL shown in the console)
+### Prerequisites
+- .NET 8.0 SDK installed
+
+### Development
+1. Clone the repository
+2. Navigate to the Sithin folder: `cd Sithin`
+3. Run `dotnet build` to build the project
+4. Run `dotnet run` to start the development server
+5. Open your browser and navigate to `https://localhost:7243` or `http://localhost:5124`
+
+### Production
+To run the production-ready version:
+```bash
+cd Sithin
+dotnet publish -c Release -o ./publish
+cd ./publish
+dotnet dotnet.dll --environment Production
+```
+
+The app will listen on `http://localhost:5000` with logging enabled.
+
+### Health Check
+The application includes a health check endpoint at `/health` for monitoring and Azure deployment validation.
 
 ## Customization
 
-- Replace placeholder images in `wwwroot/images/` with your actual photos and project screenshots
-- Update personal information and DevOps experience in `Pages/Index.cshtml`
-- Modify styles in `wwwroot/css/site.css`
+- Replace placeholder images in `Sithin/wwwroot/images/` with your actual photos and project screenshots
+- Update personal information and DevOps experience in `Sithin/Pages/Index.cshtml`
+- Modify styles in `Sithin/wwwroot/css/site.css`
 - Add your DevOps project details, GitHub repositories, and professional links
 - Update skill percentages and technologies based on your expertise
+
+## Deployment to Azure Web App
+
+### Azure Configuration
+1. **Runtime Stack**: .NET 8 (LTS), Windows
+2. **Application Settings**: 
+   - `ASPNETCORE_ENVIRONMENT` = `Production`
+3. **General Settings**: 
+   - Always On: Enabled
+   - HTTPS Only: On
+
+### Deployment Steps
+1. Build and publish: `cd Sithin && dotnet publish -c Release -o ./publish`
+2. Deploy the `publish` folder contents to Azure Web App
+3. Set up deployment slots (staging/production) for smooth deployments
+4. The health check endpoint `/health` validates deployment readiness
 
 ## Technologies Used
 
@@ -48,13 +81,28 @@ A modern, responsive single-page DevOps Engineer portfolio website built with AS
 ## DevOps Project Structure
 
 ```
-├── Pages/Index.cshtml          # Main portfolio page
-├── wwwroot/
-│   ├── css/site.css           # Custom styling
-│   ├── js/site.js            # Client-side functionality
-│   └── images/               # Portfolio images and project screenshots
-├── Dockerfile                # Containerization (optional)
-└── README.md                 # This file
+portfolio/
+├── .gitignore              # Git ignore rules
+├── README.md               # This file
+└── Sithin/                 # Main project folder
+    ├── Pages/
+    │   ├── Index.cshtml    # Main portfolio page
+    │   ├── Error.cshtml    # Error page
+    │   └── Privacy.cshtml  # Privacy page
+    ├── Properties/
+    │   └── launchSettings.json
+    ├── wwwroot/
+    │   ├── css/site.css           # Custom styling
+    │   ├── js/site.js            # Client-side functionality
+    │   ├── images/               # Portfolio images and project screenshots
+    │   └── lib/                  # Bootstrap, jQuery, validation libraries
+    ├── Program.cs                # Application entry point with health checks
+    ├── dotnet.csproj             # Project configuration
+    ├── web.config                # IIS configuration for Azure
+    ├── appsettings.json          # Default settings
+    ├── appsettings.Production.json
+    ├── appsettings.Development.json
+    └── publish/                  # Production build output
 ```
 
 ## Contributing
