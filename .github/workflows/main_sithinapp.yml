@@ -59,4 +59,5 @@ jobs:
           app-name: 'sithinapp'
           slot-name: 'Production'
           package: .
+          clean: true
           
