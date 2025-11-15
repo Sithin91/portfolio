@@ -15,11 +15,10 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-// Only redirect to HTTPS if not running behind Azure's load balancer
-// Azure handles HTTPS termination, so this might cause redirect loops
-if (app.Environment.IsDevelopment())
+else
 {
+    // Only use HTTPS redirection in development
+    // Azure App Service handles HTTPS termination at the load balancer level
     app.UseHttpsRedirection();
 }
 
