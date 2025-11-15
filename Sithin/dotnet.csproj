@@ -7,8 +7,4 @@
     <InvariantGlobalization>false</InvariantGlobalization>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="web.config" CopyToPublishDirectory="Always" />
-  </ItemGroup>
 </Project>
