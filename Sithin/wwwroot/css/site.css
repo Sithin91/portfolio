@@ -746,7 +746,7 @@ body.dark-mode .bg-gradient {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, #2563eb 0%, #7c3aed calc(var(--percentage, 0) * 1%), #e9ecef calc(var(--percentage, 0) * 1%) 100%);
+    background: conic-gradient(from 0deg, #2563eb 0%, #7c3aed calc(var(--percentage, 0) * 0.5), #22c55e calc(var(--percentage, 0) * 1%), #e9ecef calc(var(--percentage, 0) * 1%) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1543,7 +1543,7 @@ body.dark-mode .form-label {
 
     /* High contrast progress color for mobile */
     .skill-circle {
-        background: conic-gradient(#0047ab 0% 0%, #cbd5e1 0% 100%);
+        background: conic-gradient(from 0deg, #0047ab 0%, #7c3aed calc(var(--percentage, 0) * 0.5), #22c55e calc(var(--percentage, 0) * 1%), #cbd5e1 calc(var(--percentage, 0) * 1%) 100%);
     }
 
     /* Show stat cards side by side on mobile */

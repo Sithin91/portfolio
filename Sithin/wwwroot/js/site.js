@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentPercent = progress * targetPercent;
             
             // Update the conic gradient with gradient color
-            circle.style.background = `conic-gradient(from 0deg, #2563eb 0%, #7c3aed ${currentPercent}%, #e9ecef ${currentPercent}% 100%)`;
+            circle.style.background = `conic-gradient(from 0deg, #2563eb 0%, #7c3aed ${currentPercent * 0.5}%, #22c55e ${currentPercent}%, #e9ecef ${currentPercent}% 100%)`;
             
             // Update the percentage text
             percentText.textContent = Math.round(currentPercent) + '%';
