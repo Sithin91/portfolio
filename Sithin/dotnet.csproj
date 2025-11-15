@@ -6,6 +6,5 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 </Project>
