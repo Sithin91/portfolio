@@ -22,7 +22,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection(); // Removed - Azure handles HTTPS at proxy level
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
