@@ -98,7 +98,6 @@ portfolio/
     │   └── lib/                  # Bootstrap, jQuery, validation libraries
     ├── Program.cs                # Application entry point with health checks
     ├── dotnet.csproj             # Project configuration
-    ├── web.config                # IIS configuration for Azure
     ├── appsettings.json          # Default settings
     ├── appsettings.Production.json
     ├── appsettings.Development.json
