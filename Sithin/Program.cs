@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.HttpOverrides;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,12 +6,7 @@ builder.Services.AddRazorPages();
 var app = builder.Build();
 
 // Configure forwarded headers for Azure
-app.UseForwardedHeaders(new ForwardedHeadersOptions
-{
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
-    RequireHeaderSymmetry = false,
-    ForwardLimit = null
-});
+app.UseForwardedHeaders();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -23,7 +16,11 @@ if (!app.Environment.IsDevelopment())
 }
 
 // app.UseHttpsRedirection(); // Removed - Azure handles HTTPS at proxy level
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    ServeUnknownFileTypes = true,
+    DefaultContentType = "application/octet-stream"
+});
 app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages();
