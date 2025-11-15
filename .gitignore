@@ -308,7 +308,7 @@ jspm_packages/
 
 ## Nuxt.js build / generate output
 .nuxt
-dist
+
 
 ## Gatsby files
 .cache/
@@ -338,5 +338,3 @@ temp/
 
 ## End of https://www.toptal.com/developers/gitignore/api/visualstudio,aspnetcore
 
-# Keep lib files for Azure deployment
-!wwwroot/lib/
