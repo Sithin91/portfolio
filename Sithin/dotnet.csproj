@@ -5,12 +5,5 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
-    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
-    <IsTransformWebConfigDisabled>false</IsTransformWebConfigDisabled>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="web.config" CopyToPublishDirectory="Always" />
-  </ItemGroup>
-
 </Project>
