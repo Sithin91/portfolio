@@ -1,0 +1,21 @@
+{
+    "name": "Sithin Adiyeri - Senior Systems Engineer & Technology Trainer",
+    "short_name": "Sithin Portfolio",
+    "description": "Senior Systems Engineer & Technology Trainer specializing in Windows Server, Azure Cloud, DevOps, PowerShell, Python, and Cybersecurity",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "16x16 32x32 48x64",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#007bff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
