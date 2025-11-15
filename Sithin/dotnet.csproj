@@ -9,4 +9,8 @@
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="wwwroot\lib\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
