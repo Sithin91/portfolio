@@ -5,9 +5,6 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
-// Configure forwarded headers for Azure
-app.UseForwardedHeaders();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
