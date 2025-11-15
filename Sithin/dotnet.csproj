@@ -10,13 +10,4 @@
     <AspNetCoreModuleName>AspNetCoreModuleV2</AspNetCoreModuleName>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Update="web.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <Target Name="ConfigureWebConfig" AfterTargets="Publish">
-    <XmlPoke XmlInputPath="$(PublishDir)web.config" Query="/configuration/location/system.webServer/aspNetCore/@stdoutLogEnabled" Value="true" />
-  </Target>
 </Project>
