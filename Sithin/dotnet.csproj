@@ -6,12 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+    <IsTransformWebConfigDisabled>false</IsTransformWebConfigDisabled>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Update="web.config">
-      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-    </Content>
+    <None Include="web.config" CopyToPublishDirectory="Always" />
   </ItemGroup>
 
 </Project>
